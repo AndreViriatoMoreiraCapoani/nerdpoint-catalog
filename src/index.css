@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #001a65;
+  --color-ice: #a9e4ee;
+  --color-neon-cyan: #3ecdef;
+  --color-neon-pink: #fd1d75;
+  --color-electric: #055ccc;
+  --color-neon-magenta: #f601c0;
+
+  /*background*/
+  --color-void: #00061c;
+
+  /*fontes*/
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+}
+
+/*estilo*/
+body {
+  margin: 0;
+  background-color: var(--color-void);
+  color: var(--color-ice);
+  font-family: var(--font-body);
+}
