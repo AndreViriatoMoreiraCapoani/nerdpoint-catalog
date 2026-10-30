@@ -1,10 +1,3 @@
-function App() {
-  return <h1 className="text-3xl font-bold text-violet-500">Teste</h1>
-}
-
-export default App
-
-/*
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -127,4 +120,3 @@ function App() {
 }
 
 export default App
-*/
