@@ -1,121 +1,490 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-void font-body text-ice">
+      {/*header*/}
+      <header className="sticky top-0 z-20 border-b-2 border-neon-cyan bg-void/90 backdrop-blur">
+        <div className="mx-auto flex w-full max-w-300 items-center justify-between px-4 py-3">
+          {/*conta*/}
+          <button
+            type="button"
+            aria-label="Minha conta"
+            className="flex h-10 w-10 items-center justify-center border border-neon-cyan bg-navy hover:bg-electric">
+            <img
+              src="/img/icone-usuario.jpg"
+              alt=""
+              className="h-full w-full object-contain"
+            />
+          </button>
+
+          {/*logo*/}
+          <a
+            href="#"
+            className="block h-12 w-40 overflow-hidden md:h-14 md:w-56 lg:order-first lg:w-64"
+          >
+            <img src="/img/logo.png" alt="Logo NerdPoint" className="h-full w-full object-cover" />
+          </a>
+
+          {/*carrinho*/}
+          <button
+            type="button"
+            aria-label="Carrinho"
+            className="flex h-10 w-10 items-center justify-center border border-neon-pink bg-navy hover:bg-neon-magenta lg:hidden"
+          >
+            <img src="/img/carrinho.png" alt="" className="h-6 w-6" />
+          </button>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+      </header>
+
+      {/*grid principal*/}
+      <main className="mx-auto grid w-full max-w-300 gap-4 px-4 py-4 md:grid-cols-[3fr_1fr] lg:grid-cols-[1fr_320px]">
+        {/*destaques/banner*/}
+        <section
+          aria-label="Destaques e promoções"
+          className="flex h-44 flex-col justify-center border border-neon-cyan bg-linear-to-r from-navy via-electric to-neon-magenta p-6 md:col-start-1 md:row-start-1 md:h-56 lg:h-64"
         >
-          Count is {count}
-        </button>
-      </section>
+          <p className="font-display text-xs uppercase tracking-[0.3em] text-neon-cyan">
+            Sistema online
+          </p>
+          <h1 className="mt-2 font-display text-2xl font-black uppercase text-white md:text-3xl lg:text-4xl">
+            Neon Week: até 40% off
+          </h1>
+          <p className="mt-2 text-lg text-ice">
+            Promoções, novidades e peças limitadas para quem vive no futuro.
+          </p>
+        </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
+        {/*filtros*/}
+        <nav
+          aria-label="Filtros"
+          className="md:col-start-2 md:row-start-1 md:h-full lg:col-start-1 lg:row-start-2 lg:h-auto"
+        >
+          <ul className="grid h-full grid-cols-4 gap-2 md:grid-cols-1 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-1">
             <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
+              <button
+                type="button"
+                className="h-full w-full border border-electric bg-navy px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wider text-ice hover:border-neon-cyan hover:text-neon-cyan md:text-xs"
+              >
+                Gênero
+              </button>
             </li>
             <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
+              <button
+                type="button"
+                className="h-full w-full border border-electric bg-navy px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wider text-ice hover:border-neon-cyan hover:text-neon-cyan md:text-xs"
+              >
+                Categoria
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="h-full w-full border border-electric bg-navy px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wider text-ice hover:border-neon-cyan hover:text-neon-cyan md:text-xs"
+              >
+                Preço
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="h-full w-full border border-electric bg-navy px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wider text-ice hover:border-neon-cyan hover:text-neon-cyan md:text-xs"
+              >
+                Ordem
+              </button>
             </li>
           </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </nav>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        {/*carrinho desktop*/}
+        <aside
+          aria-label="Carrinho de compras"
+          className="hidden border border-neon-pink bg-navy lg:sticky lg:top-24 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:block lg:self-start"
+        >
+          <h2 className="border-b border-neon-pink p-4 font-display text-sm font-bold uppercase tracking-widest text-neon-pink">
+            Seu carrinho
+          </h2>
+          <div className="p-6 text-center">
+            <img src="/img/carrinho.png" alt="" className="mx-auto h-12 w-12" />
+            <p className="mt-3 font-display text-sm font-bold uppercase text-ice">Carrinho vazio</p>
+            <p className="mt-1 text-ice/70">Escolha uma peça para começar.</p>
+            <p className="mt-6 border-t border-electric pt-3 font-display text-lg font-bold text-neon-cyan">
+              Total: R$ 0,00
+            </p>
+          </div>
+        </aside>
+
+        {/*primeira listagem*/}
+        <section
+          aria-labelledby="titulo-produtos"
+          className="border border-electric bg-void p-3 md:col-span-2 md:p-4 lg:col-span-1 lg:col-start-1"
+        >
+          <h2
+            id="titulo-produtos"
+            className="font-display text-lg font-bold uppercase tracking-widest text-neon-cyan"
+          >
+            Produtos
+          </h2>
+          <p className="text-ice/70">10 itens disponíveis</p>
+
+          <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+            {/*card 1*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/Anya-Forger-plush.jpg"
+                  alt="Pelúcia Chibi Rosa"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Pelúcia
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Pelúcia Chibi Rosa</h3>
+                <p className="text-sm text-ice/70">Pelúcia de 20 cm com cabelo rosa e orelhas pretas.</p>
+                <p className="text-sm text-neon-cyan">★ 4,9</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 89,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/* card 2*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/cup-satoru-gojo.jpg"
+                  alt="Caneca Feiticeiro"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Caneca
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Caneca Feiticeiro</h3>
+                <p className="text-sm text-ice/70">Cerâmica de 325 ml com arte em preto e branco.</p>
+                <p className="text-sm text-neon-cyan">★ 4,8</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 49,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 3*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/gamer-keyboard.jpg"
+                  alt="Teclado Mecânico RGB"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Periférico
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Teclado Mecânico RGB</h3>
+                <p className="text-sm text-ice/70">Compacto, com iluminação RGB e switches mecânicos.</p>
+                <p className="text-sm text-neon-cyan">★ 4,8</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 349,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 4*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/gamer-lamp.jpg"
+                  alt="Luminária Game Over"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Decoração
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Luminária Game Over</h3>
+                <p className="text-sm text-ice/70">Luminária de néon em formato de controle de videogame.</p>
+                <p className="text-sm text-neon-cyan">★ 4,7</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 129,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 5*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/headset-gamer.jpg"
+                  alt="Headset Gamer RGB"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Periférico
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Headset Gamer RGB</h3>
+                <p className="text-sm text-ice/70">Headset com microfone articulado e luzes RGB.</p>
+                <p className="text-sm text-neon-cyan">★ 4,6</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 219,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 6*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/mousepad-gamer.jpg"
+                  alt="Mousepad Cyber Neon"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Setup
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Mousepad Cyber Neon</h3>
+                <p className="text-sm text-ice/70">Mousepad grande com arte cyberpunk em rosa e ciano.</p>
+                <p className="text-sm text-neon-cyan">★ 4,9</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 99,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 7*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/Nezuko-Kamado-backpack.jpg"
+                  alt="Mochila Espadachim"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Mochila
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Mochila Espadachim</h3>
+                <p className="text-sm text-ice/70">Mochila rosa e preta com entrada USB e chaveiro de pompom.</p>
+                <p className="text-sm text-neon-cyan">★ 4,7</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 189,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 8*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/pin-Demon-Slayer.jpg"
+                  alt="Kit de Pins Esmaltados"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Acessório
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Kit de Pins Esmaltados</h3>
+                <p className="text-sm text-ice/70">Cinco pins de metal esmaltado em estilo chibi.</p>
+                <p className="text-sm text-neon-cyan">★ 4,8</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 39,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 9*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/spider-man.jpg"
+                  alt="Action Figure Aranha"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Colecionável
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Action Figure Aranha</h3>
+                <p className="text-sm text-ice/70">Action figure articulado de 15 cm em pose de salto.</p>
+                <p className="text-sm text-neon-cyan">★ 4,9</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 299,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 10*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
+              <figure className="relative aspect-square bg-white">
+                <img
+                  src="/img/products/primeira-listagem/shirt-evangelion.jpg"
+                  alt="Camiseta Mangá Sci-Fi"
+                  className="h-full w-full object-contain p-2"
+                />
+                <figcaption className="absolute right-2 top-2 bg-neon-pink px-2 py-0.5 font-display text-[10px] uppercase tracking-widest text-white">
+                  Camiseta
+                </figcaption>
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Camiseta Mangá Sci-Fi</h3>
+                <p className="text-sm text-ice/70">Camiseta preta de algodão com estampa em preto e branco.</p>
+                <p className="text-sm text-neon-cyan">★ 4,6</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 89,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/*segunda listagem*/}
+        <section
+          aria-labelledby="titulo-mercenarios"
+          className="border border-neon-pink bg-void p-3 md:col-span-2 md:p-4 lg:col-span-1 lg:col-start-1"
+        >
+          <h2
+            id="titulo-mercenarios"
+            className="font-display text-lg font-bold uppercase tracking-widest text-neon-pink"
+          >
+            Cyberpunk: Mercenários
+          </h2>
+          <p className="text-ice/70">Figures da categoria mais pedida da loja.</p>
+
+          <div className="mt-3 grid gap-3 md:grid-cols-3">
+            {/*card 1*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-pink hover:shadow-[0_0_14px] hover:shadow-neon-pink/50">
+              <figure className="aspect-square bg-white">
+                <img
+                  src="/img/products/segunda-listagem/David-Martinez-figure.jpg"
+                  alt="Figure David"
+                  className="h-full w-full object-contain p-2"
+                />
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Figure David</h3>
+                <p className="text-sm text-ice/70">Figure chibi em pose de corrida, com efeito de rastro azul e verde.</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 259,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 2*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-pink hover:shadow-[0_0_14px] hover:shadow-neon-pink/50">
+              <figure className="aspect-square bg-white">
+                <img
+                  src="/img/products/segunda-listagem/lucy-figure.jpg"
+                  alt="Figure Lucy"
+                  className="h-full w-full object-contain p-2"
+                />
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Figure Lucy</h3>
+                <p className="text-sm text-ice/70">Figure de 20 cm em pose casual, com jaqueta curta e cabelo degradê.</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 329,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+
+            {/*card 3*/}
+            <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-pink hover:shadow-[0_0_14px] hover:shadow-neon-pink/50">
+              <figure className="aspect-square bg-white">
+                <img
+                  src="/img/products/segunda-listagem/Rebecca-figure.jpg"
+                  alt="Figure Rebecca"
+                  className="h-full w-full object-contain p-2"
+                />
+              </figure>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-sm font-bold text-ice">Figure Rebecca</h3>
+                <p className="text-sm text-ice/70">Estátua com duas escopetas verdes e base com luz de LED.</p>
+                <p className="mt-auto pt-2 font-display text-lg font-black text-neon-pink">R$ 389,90</p>
+                <button
+                  type="button"
+                  className="bg-neon-magenta py-2 font-display text-xs font-bold uppercase tracking-widest text-white hover:bg-neon-pink"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      {/*footer*/}
+     <footer className="mt-4 border-t-2 border-neon-pink bg-black px-4 py-6 text-center text-sm text-ice/70">
+  <p>
+    NerdPoint - projeto acadêmico desenvolvido por{" "}
+    <a
+      href="https://github.com/AndreViriatoMoreiraCapoani"
+      className="text-neon-cyan hover:text-neon-pink"
+    >
+      André Capoani
+    </a>{" "}
+    na faculdade Unimater
+  </p>
+</footer>
+    </div>
   )
 }
 

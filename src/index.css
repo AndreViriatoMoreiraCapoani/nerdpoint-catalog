@@ -17,7 +17,7 @@
   --font-body: "Rajdhani", sans-serif;
 }
 
-/*estilo base da página*/
+/*estilo*/
 body {
   margin: 0;
   background-color: var(--color-void);
