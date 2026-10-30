@@ -397,7 +397,7 @@ function App() {
             id="titulo-mercenarios"
             className="font-display text-lg font-bold uppercase tracking-widest text-neon-pink"
           >
-            Cyberpunk: Mercenários
+            Cyberpunk: Edgerunners 
           </h2>
           <p className="text-ice/70">Figures da categoria mais pedida da loja.</p>
 
