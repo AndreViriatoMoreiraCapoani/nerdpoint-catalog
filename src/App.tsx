@@ -1,3 +1,6 @@
+import './App.css';
+import './index.css';
+
 function App() {
   return (
     <div className="min-h-screen bg-void font-body text-ice">
@@ -5,14 +8,16 @@ function App() {
       <header className="sticky top-0 z-20 border-b-2 border-neon-cyan bg-void/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-300 items-center justify-between px-4 py-3">
           {/*conta*/}
+
           <button
             type="button"
             aria-label="Minha conta"
-            className="flex h-10 w-10 items-center justify-center border border-neon-cyan bg-navy hover:bg-electric">
+            className="flex h-10 w-10 items-center justify-center overflow-hidden border border-neon-cyan bg-navy hover:bg-electric"
+          >
             <img
               src="/img/icone-usuario.jpg"
               alt=""
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </button>
 
@@ -152,7 +157,7 @@ function App() {
               </div>
             </article>
 
-            {/* card 2*/}
+            {/*card 2*/}
             <article className="flex flex-col overflow-hidden border border-electric bg-navy transition hover:border-neon-cyan hover:shadow-[0_0_14px] hover:shadow-neon-cyan/50">
               <figure className="relative aspect-square bg-white">
                 <img
