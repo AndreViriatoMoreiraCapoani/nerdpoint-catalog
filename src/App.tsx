@@ -42,10 +42,20 @@ const { products, loading, error } = useProducts();
         <CartAside />
 
         {/*primeira listagem*/}
-        {loading ? (
-  <p>Carregando produtos...</p>
+{loading ? (
+  <div className="products-status products-status--loading">
+    <div className="loading-video-container">
+      <video autoPlay loop muted playsInline>
+        <source src="/img/loading.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <p>Carregando produtos...</p>
+  </div>
 ) : error ? (
-  <p>Erro ao carregar produtos: {error}</p>
+  <p className="products-status products-status--error">
+    Não foi possível carregar os produtos. Tente novamente mais tarde.
+  </p>
 ) : (
   <ProductList
     products={products}
