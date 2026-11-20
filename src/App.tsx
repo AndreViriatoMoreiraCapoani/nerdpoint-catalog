@@ -8,12 +8,13 @@ import { CartAside } from './components/CartAside';
 import { ProductList } from './components/ProductList';
 import { FigureList } from './components/FigureList';
 import { Footer } from './components/Footer';
-import { products } from './data/products';
 import { figures } from './data/figures';
+import { useProducts } from './hook/use-products';
 
 function App() {
   // Estado dos produtos favoritos
   const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
+const { products, loading, error } = useProducts();
 
   // Adiciona ou remove um produto dos favoritos sem afetar os outros cards
   function toggleFavorite(productId: string) {
@@ -41,7 +42,17 @@ function App() {
         <CartAside />
 
         {/*primeira listagem*/}
-        <ProductList products={products} favoriteIds={favoriteIds} onToggleFavorite={toggleFavorite} />
+        {loading ? (
+  <p>Carregando produtos...</p>
+) : error ? (
+  <p>Erro ao carregar produtos: {error}</p>
+) : (
+  <ProductList
+    products={products}
+    favoriteIds={favoriteIds}
+    onToggleFavorite={toggleFavorite}
+  />
+)}
 
         {/*segunda listagem*/}
         <FigureList figures={figures} />

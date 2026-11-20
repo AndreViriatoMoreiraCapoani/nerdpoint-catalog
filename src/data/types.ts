@@ -15,3 +15,13 @@ export type Figure = {
   image: string;
   price: string;
 };
+
+export type ApiProduct = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  category: string;
+  rating: number;
+  price: number;
+};
