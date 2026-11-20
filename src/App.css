@@ -1,1 +1,63 @@
-/* Os estilos da página são aplicados pelas classes Tailwind nos componentes. */
+.products-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 24px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #3ecdef;
+  border-radius: 12px;
+  background-color: #001a65;
+}
+
+.products-status--loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #a9e4ee;
+  background-color: #00061c;
+  border-color: transparent;
+}
+
+.products-status--error {
+  color: #fd1d75;
+  border-color: #fd1d75;
+}
+
+.loading-video-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 48%,
+    rgba(0, 0, 0, 0.85) 65%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 48%,
+    rgba(0, 0, 0, 0.85) 65%,
+    transparent 100%
+  );
+}
+
+.loading-video-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .products-status {
+    min-height: 150px;
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+}
